@@ -1,0 +1,364 @@
+
+//header 
+.header{
+    height: 95vh;
+    width: 100%;
+    background-image: linear-gradient(120deg,#34626C 20%,#1A3136);
+    overflow: hidden;
+    position: relative;
+    
+    
+    &__container{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        
+        transform: translate(0,-50%);
+        display: flex;
+        justify-content: center;
+        @include responed(tablet-port){
+            flex-wrap: wrap;
+            margin-top: 4rem;
+        }
+
+    }
+    &__img{
+        width: 50rem;
+        height: 25rem;
+        margin-right: 5rem;
+
+      
+        box-shadow: 1.5rem 1.5rem 0.5rem rgba(71, 56, 56, 0.3);
+        @include responed(tablet-landscape){
+        width: 40rem;
+        height: 20rem;
+       
+        
+        }
+        @include responed(tablet-port){
+            margin-bottom: 4rem;
+        }
+        @include responed(small-phone){
+            width: 30rem;
+            height: 15rem;
+            margin: 0;
+            margin-bottom: 4rem;
+            
+        }
+      
+    }
+    &__left{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include responed(tablet-landscape){
+          
+           
+            
+            }
+        
+    }
+    &__text{
+        font-size: 4rem;
+        font-weight: 700;
+        display: inline-block;
+        width: 70rem;
+        text-align: center;
+        color: #ffffff;
+    
+        margin-bottom: 4rem;
+        @include responed(tablet-landscape){
+        font-size: 3rem;
+        width: 50rem;
+       
+        
+        }
+        @include responed(small-phone){
+           font-size: 2rem;
+           width: 30rem;
+            
+        }
+        
+
+    }
+    &__button{
+        border: none;
+        border-radius: 10rem;
+        width: 23rem;
+        height: 5.5rem;
+        text-align: center;
+        font-size: 2.2rem;
+        background-color: #CFD3CE;
+        display: block;
+        color: #34626C;
+        cursor: pointer;
+        box-shadow: 0.5rem 0.5rem 2rem rgba(#000000,0.3);
+        outline: none;
+        font-weight: 700;
+    }
+    &__button:hover{
+        transform: translateY(-3px);
+
+    }
+    &__button:active{
+        transform: translateY(-1px);
+    }
+    
+
+}
+
+
+
+
+/////////////////////////////////
+/////////////////////nav bar 
+
+
+
+.nav{
+    display: flex;
+    padding-top: 3rem;
+    width: 100%;
+    justify-content: space-between;
+    color: #ffffff;
+    position: absolute;
+    z-index: 2;
+    @include responed(phone){
+        display: none;
+    }
+    &__logo h1{
+        font-size: 4rem;
+        font-weight: 700;
+    }
+    &__logo{
+        margin-right: 5rem;
+        order: 2;
+    }
+    &__items{
+        display: flex;
+        list-style: none;
+        padding-left: 5rem;
+        align-items: center;
+        font-size: 2rem;
+        
+        order: 0;
+
+    }
+    &__item{
+        
+        padding-left: 4rem;
+        font-weight: 500;
+    }
+   
+    &__link:link,
+    &__link:visited{
+        display: inline-block;
+        font-size: 2rem;
+        text-decoration: none;
+        color:#ffffff ;
+        opacity: 70%;
+        
+    }
+    &__link:hover,
+    &__link:active{
+        opacity: 100%;
+    }   
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////section provie
+
+
+
+.provide{
+    
+    width: 100%;
+    height:auto;
+    background-image: linear-gradient(120deg,#839B97 30%,#424E4C);
+    display: flex;
+    justify-content: center;
+    @include responed(tablet-landscape){
+        flex-wrap: wrap;
+        
+    }
+
+    &__card{
+        width:27rem;
+        height:48rem;
+        background-color: #ffffff;
+        box-shadow: 1rem 0.5rem 1rem rgba(0,0,0,0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin:7rem ;
+
+    }
+    &__img{
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        width: 20rem;
+        height: 12rem;
+
+    }
+    &__text{
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+    }
+    &__header{
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+
+    }
+    &__button:link,
+    &__button:visited{
+        display: inline-block;
+        width: 20rem;
+        height: 3.5rem;
+        background-color:#34626C;
+        text-align: center;
+        font-size: 2rem;
+        padding-top: .5rem;
+        box-shadow: .5rem .5rem 1rem rgba(0,0,0,0.3);
+
+    }
+    &__button{
+        transform: all .3s;
+    }
+    &__button:hover{
+        transform: translateY(-3px);
+
+    }
+    &__button:active{
+        transform: translateY(-1px);
+    }
+
+}
+
+
+
+
+
+//////////////////lets go
+
+
+
+
+.letsgo{
+    width: 100%;
+    height: 60rem;
+   
+   
+    background-image: linear-gradient(120deg,rgba(0, 0, 0, 0.3)40%,rgba(0, 0, 0, 0.7)),url('../img/letsgo.svg');
+    
+    position: relative;
+    
+    &__container{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        flex-direction: column;
+    padding-top: 10rem;    
+    width: 70%;
+   
+    @include responed(phone){
+       position: absolute;
+       top: 12%;
+       z-index: 2;
+        
+    }
+    
+
+    }
+    &__header{
+        font-size: 4rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-top: 4rem;
+        text-align: end;
+        margin-bottom: 2rem;
+        @include responed(phone){
+            font-size: 2.5rem;
+            margin-left: 4rem;
+            
+        }
+        
+        
+        
+
+    }
+    &__header-secondary{
+        font-size: 3rem;
+        font-weight: 400;
+        color: #ffffff;
+        text-align: end;
+        margin-bottom: 2rem;
+        @include responed(phone){
+            font-size: 2rem;
+            
+        }
+
+
+    }
+    &__button:link,
+    &__button:visited{
+        border: none;
+        border-radius: 10rem;
+        width: 20rem;
+        height: 4rem;
+        text-align: center;
+        font-size: 2.2rem;
+        background-color: #CFD3CE;
+        display: block;
+        color: #34626C;
+        cursor: pointer;
+        box-shadow: 0.5rem 0.5rem 2rem rgba(#000000,0.3);
+        outline: none;
+        font-weight: 400;
+        text-align: center;
+        padding-top: 1rem;
+    }
+    &__button:hover{
+        transform: translateY(-3px);
+
+    }
+    &__button:active{
+        transform: translateY(-1px);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

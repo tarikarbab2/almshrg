@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="facebook" transform="translate(678 30)">
+    <g id="OBJECTS" transform="translate(-678 -30)">
+      <path id="Path_43" data-name="Path 43" d="M50,25A25,25,0,1,0,25,50,25,25,0,0,0,50,25Z" transform="translate(0 0)" fill="#0f00a0"/>
+      <path id="Path_44" data-name="Path 44" d="M61.1,38.171V35.8a1.254,1.254,0,0,1,1.309-1.424h3.321V29.307l-4.575-.017c-5.079,0-6.232,3.784-6.232,6.2v2.677H52v5.918h2.963V58.9h5.918v-14.8h4.383l.543-5.918Z" transform="translate(-33.897 -19.093)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
