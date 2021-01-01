@@ -6,12 +6,17 @@
     background-image: linear-gradient(120deg,#34626C 20%,#1A3136);
     overflow: hidden;
     position: relative;
+    @include responed(small-tablet){
+        height: 65rem;
+    }
+   
     
     
     &__container{
         width: 100%;
         position: absolute;
         top: 50%;
+        margin-top: 7rem;
         
         transform: translate(0,-50%);
         display: flex;
@@ -19,6 +24,10 @@
         @include responed(tablet-port){
             flex-wrap: wrap;
             margin-top: 4rem;
+        }
+        @include responed(small-tablet){
+        
+        
         }
 
     }
@@ -103,6 +112,7 @@
     &__button:active{
         transform: translateY(-1px);
     }
+
     
 
 }
@@ -117,37 +127,95 @@
 
 .nav{
     display: flex;
-    padding-top: 3rem;
+    height: 8rem;
     width: 100%;
     justify-content: space-between;
     color: #ffffff;
-    position: absolute;
-    z-index: 2;
-    @include responed(phone){
-        display: none;
+    //position: absolute;
+    z-index: 50;
+    background-color: #000000;
+    align-items: center;
+    position: fixed;
+    @include responed(small-tablet){
+        position: fixed;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-bottom: 1rem;
+        background-color: transparent;
+        height: auto;
+        
+        
+       
+        
+        padding-top: 0;
     }
+  
     &__logo h1{
-        font-size: 4rem;
+        font-size: 2rem;
         font-weight: 700;
+
     }
     &__logo{
         margin-right: 5rem;
         order: 2;
+        @include responed(small-tablet){
+            padding: 2rem;
+            background-color: #000000;
+            order: -2;
+            width: 100%;
+            margin-right: 0;
+            text-align: end;
+            height: 100%;
+            
+        }
     }
     &__items{
         display: flex;
         list-style: none;
         padding-left: 5rem;
-        align-items: center;
+        align-items: flex-start;
         font-size: 2rem;
+      
+        @include responed(small-tablet){
+            align-items: flex-end;
+            flex-direction: column;
+           // justify-content: flex-end;
+            display: none;
+            width: 20rem;
+            background-color: #3d59a7;
+            box-shadow: 1rem 1rem 1rem rgba(#000000,0.2);
+            
+           
+
+        }
+       
+        
+      
         
         order: 0;
 
     }
+    
     &__item{
         
         padding-left: 4rem;
         font-weight: 500;
+        @include responed(small-tablet){
+            
+           
+           margin-top: 1rem;
+
+           padding: 0;
+          
+           color: #ffffff;
+           padding-right: 2rem;
+           margin-bottom: 1.5rem;
+          
+           
+           
+              
+            }
     }
    
     &__link:link,
@@ -157,12 +225,56 @@
         text-decoration: none;
         color:#ffffff ;
         opacity: 70%;
+        @include responed(phone){
+            opacity: 100%;
+            font-size: 2.5rem;
+            
+        }
         
     }
     &__link:hover,
     &__link:active{
         opacity: 100%;
     }   
+        /////////////////////////navigation for phone
+        &__icon{
+            display: none;
+            @include responed(small-tablet){
+                display: flex;
+                width:4rem;
+                height: 4rem;
+                background-color: #ffffff;
+                border-radius: 10rem;
+                
+                box-shadow: .5rem 1rem 1rem rgba(#000000,0.3) ;
+                justify-content: center;
+                align-items: center;
+                order: -1;
+                
+                position: fixed;
+                margin-bottom: 2rem;
+                top: 1.5rem;
+                left: 3rem;
+                border: none;
+                &:focus{
+                    outline: none;
+                }
+                &:active{
+                    transform: translateY(2px);
+                }
+     
+        }
+            
+            
+        }
+        
+        &__hum{
+            width: 2.5rem;
+            height: 2.5rem;
+            
+           
+
+        }
 
     
 }
@@ -326,14 +438,16 @@
         text-align: center;
         font-size: 2.2rem;
         background-color: #CFD3CE;
-        display: block;
+        display: flex;
         color: #34626C;
         cursor: pointer;
         box-shadow: 0.5rem 0.5rem 2rem rgba(#000000,0.3);
         outline: none;
         font-weight: 400;
         text-align: center;
-        padding-top: 1rem;
+        align-items: center;
+        justify-content: center;
+        
     }
     &__button:hover{
         transform: translateY(-3px);
