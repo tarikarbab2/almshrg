@@ -1,5 +1,5 @@
 
-
+const btn=document.querySelector(".btn")
 
 ///render the houses in the browser
 
@@ -97,26 +97,65 @@ const apartmentrenting3=apartmentrenting.additem(1,3,'../img/apartmant9.jpg',1,1
 const apartmentrenting4=apartmentrenting.additem(1,3,'../img/apartmant10.jpg',1,1,200)
 const apartmentrenting5=apartmentrenting.additem(1,3,'../img/apartmant11.jpg',1,1,400)
 const apartmentrenting6=apartmentrenting.additem(1,3,'../img/apartmant12.jpg',1,1,300)
+const apartmentrenting7=apartmentrenting.additem(1,3,'../img/apartmant12.jpg',1,1,300)
 
 
 ///get the query name to detarmine the reults for the user
 const query=new URLSearchParams(window.location.search)
 
+/////// render only 6 result from all the array
+const renderResult=(result,page=1,resPerPage=6)=>{
+    ///start and the end of the slice from the array
+    const start=(page-1)*resPerPage
+    const end= page*resPerPage
+  //render the button of the next and previos page
+ renderButtons(result,page,resPerPage)
+    ////slice the resultes accourding to then start and the end
+    result.slice(start,end).forEach((el)=>renderitems(el,'دولار'));
+}
+
+
+////render the buttons to next and previos pages
+const renderButtons=(result,page,resPerPage)=>{
+    ///create the button
+    const markup =`${page>1?`<button class="btn__pages" data-togo=${page-1}>
+    <img src="../img/arrow-back.svg" alt="arrow-back" class="btn__icon">
+    <span>صفحة ${page-1} </span>
+  
+</button>`
+: ''}
+${Math.ceil(result.length/resPerPage)>(page)?`
+<button class="btn__pages" data-togo=${page+1}>
+    <span>صفحة ${page+1}</span>
+    <img src="../img/arrow.svg" alt="arrow" class="btn__icon">
+    
+</button>`:''}`
+
+///slecet the container then render the button to it
+btn.insertAdjacentHTML('beforeend',markup);
+
+}
+
+
+/////////render the result according to the query from the url
 const result=()=>{
-    let addItems;
+ 
 if(query.get('name')==='sellHouse'){
+
+   
+    
     document.querySelector('.cards__header').innerHTML='مباني للبيع'
-    addItems=houseBying.item.forEach(el=>{
-        return renderitems(el,"دولار")
-    })
+    // addItems=houseBying.item.forEach(el=>{
+    //     return renderitems(el,"دولار")
+    // })
+    renderResult(houseBying.item)
+    return houseBying.item
 
 }
 else if(query.get('name')==='rentHouse'){
     document.querySelector('.cards__header').innerHTML='مباني للأيجار'
-    addItems=houseRent.item.forEach(el => {
-
-        return renderitems(el,'في الشهر');
-    });
+    renderResult(houseRent.item)
+    return houseRent.item
 }
 else if(query.get('name')==null){
     window.location.replace('../index.html')
@@ -124,20 +163,40 @@ else if(query.get('name')==null){
 }
 else if(query.get('name')==='buyAprtment'){
     document.querySelector('.cards__header').innerHTML='شقق للبيع'
-    addItems=apartmentBuying.item.forEach(el=>{
-        return renderitems(el,"دولار")
-    })
-
+    renderResult(apartmentBuying.item)
+    return apartmentBuying.item
 }
 else if(query.get('name')==='rentAprtment'){
     document.querySelector('.cards__header').innerHTML='شقق للأيجار'
 
-    addItems=apartmentrenting.item.forEach(el=>{
-        return renderitems(el,'في الشهر')
-    })
+    renderResult(apartmentrenting.item)
+    return apartmentrenting.item
 }
 else{
     window.location.replace('../index.html')
 }
 }
 result()
+
+
+const clearResult=()=>{
+    const container=document.querySelector('.cards__container')
+    container.innerHTML='';
+    btn.innerHTML='';
+}
+
+btn.addEventListener('click',(e)=>{
+    let nextbtn=e.target.closest('.btn__pages')
+    if(nextbtn){
+      const goTopage=parseInt( nextbtn.dataset.togo,10)
+      let items=result()
+     
+
+     
+      clearResult()
+
+     renderResult(items,goTopage)
+     
+
+    }
+})

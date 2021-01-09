@@ -6,6 +6,8 @@
     margin-bottom: 10rem;
     margin-top: 10rem;
     border-radius: 1.5rem;
+    box-shadow: 1rem 1rem 1rem rgba( #000000,.35);
+ 
 
 
     &__header{
@@ -16,4 +18,7 @@
         
     }
 
+}
+body{
+    background-color: rgba(#C4C1CE,.3);
 }

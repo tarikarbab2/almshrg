@@ -305,6 +305,26 @@ a:visited {
   padding-left: 5px;
   padding-right: 5px; }
 
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .btn__pages {
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 1.5rem;
+    margin: 3rem;
+    box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.9);
+    font-weight: 500; }
+  .btn__icon {
+    width: 1rem;
+    height: 1rem;
+    margin-left: 5px; }
+
 .nav {
   display: flex;
   height: 8rem;
@@ -482,9 +502,13 @@ a:visited {
   text-align: center;
   margin-bottom: 10rem;
   margin-top: 10rem;
-  border-radius: 1.5rem; }
+  border-radius: 1.5rem;
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.35); }
   .cards__header {
     font-size: 5rem;
     color: #ffffff;
     margin: 0 auto;
     padding-top: 3rem; }
+
+body {
+  background-color: rgba(196, 193, 206, 0.3); }
