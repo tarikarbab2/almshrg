@@ -56,6 +56,13 @@
         }
       
     }
+    &__img-en{
+        order: 2;
+        @include responed(small-tablet){
+        
+        order: -1;
+        }
+    }
     &__left{
         display: flex;
         flex-direction: column;
@@ -66,6 +73,10 @@
             
             }
         
+    }
+    &__left-en{
+        justify-content: center;
+        text-align: start;
     }
     &__text{
         font-size: 4rem;
@@ -126,7 +137,7 @@
 
        
     }
-    
+   
 
 }
 
@@ -168,7 +179,7 @@
 
     &__card{
         width:27rem;
-        height:48rem;
+        height: auto;
         background-color: #ffffff;
         box-shadow: 1rem 0.5rem 1rem rgba(0,0,0,0.3);
         display: flex;
@@ -199,20 +210,26 @@
         margin-bottom: 3rem;
 
     }
+    &__header-en{
+        text-align: center;
+    height: 5rem;   }
   
 
 }
 //////////////////////////////////////button
 .button-primary:link,
 .button-primary:visited{
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 20rem;
-    height: 3.5rem;
+    height: 4rem;
     background-color:#34626C;
     text-align: center;
     font-size: 2rem;
     padding-top: .5rem;
     box-shadow: .5rem .5rem 1rem rgba(0,0,0,0.3);
+    margin-bottom: 3rem;
 
 }
 .button-primary{
@@ -261,6 +278,16 @@
     
 
     }
+    &__container-en{
+        align-items: flex-start;
+        margin-left: 20rem;
+        @include responed(phone){
+            margin-left: 0;
+            align-items: center;
+            justify-content: center;
+             
+         }
+    }
     &__header{
         font-size: 4rem;
         font-weight: 700;
@@ -278,6 +305,9 @@
         
 
     }
+    &__header-en{
+        text-align: start;
+    }
     &__header-secondary{
         font-size: 3rem;
         font-weight: 400;
@@ -288,8 +318,12 @@
             font-size: 2rem;
             
         }
+   
 
 
+    }
+    &__header-secondary-en{
+        text-align: start;
     }
     &__button:link,
     &__button:visited{
@@ -405,6 +439,11 @@
         align-items: flex-end;
 
     }
+    &__price-en{
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-left: 3rem;
+    }
     &__price--header{
         font-size: 2rem;
         margin-bottom: 3rem;
@@ -414,6 +453,7 @@
 
 
     }
+    
     &__button:link,
     &__button:visited,
     &__button{

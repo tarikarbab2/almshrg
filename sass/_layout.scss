@@ -13,7 +13,7 @@
     background-color: #000000;
     align-items: center;
     position: fixed;
-    @include responed(small-tablet){
+    @include responed(tablet-port){
         position: fixed;
         flex-direction: column;
         justify-content: flex-end;
@@ -36,7 +36,7 @@
     &__logo{
         margin-right: 5rem;
         order: 2;
-        @include responed(small-tablet){
+        @include responed(tablet-port){
             padding: 2rem;
             background-color: #000000;
             order: -2;
@@ -47,6 +47,15 @@
             
         }
     }
+    &__logo-en{
+        margin-right: 0;
+        margin-left: 5rem;
+        @include responed(tablet-port){
+            order: 0;
+            text-align: start;
+            padding: 2.5rem;
+        }
+    }
     &__items{
         display: flex;
         list-style: none;
@@ -54,12 +63,12 @@
         align-items: flex-start;
         font-size: 2rem;
       
-        @include responed(small-tablet){
+        @include responed(tablet-port){
             align-items: flex-end;
             flex-direction: column;
            // justify-content: flex-end;
             display: none;
-            width: 20rem;
+            width: 30rem;
             background-color: #3d59a7;
             box-shadow: 1rem 1rem 1rem rgba(#000000,0.2);
             
@@ -73,12 +82,19 @@
         order: 0;
 
     }
+    &__items-en{
+        order: 5;
+        padding-left: 0;
+        padding-right: 3rem;
+
+    }
     
     &__item{
         
-        padding-left: 4rem;
+        padding-left: 3rem;
         font-weight: 500;
-        @include responed(small-tablet){
+      
+        @include responed(tablet-port){
             
            
            margin-top: 1rem;
@@ -94,14 +110,23 @@
               
             }
     }
+    
    
     &__link:link,
     &__link:visited{
-        display: inline-block;
+        display: flex;
+       
         font-size: 2rem;
         text-decoration: none;
         color:#ffffff ;
         opacity: 70%;
+        &:first-child {
+            margin-left: 2rem;
+        }
+        &:first-child img{
+             margin-left: 1rem;
+             
+        }
         @include responed(phone){
             opacity: 100%;
             font-size: 2.5rem;
@@ -116,7 +141,7 @@
         /////////////////////////navigation for phone
         &__icon{
             display: none;
-            @include responed(small-tablet){
+            @include responed(tablet-port){
                 display: flex;
                 width:4rem;
                 height: 4rem;
@@ -144,6 +169,10 @@
             
             
         }
+        &__icon-en{
+            left: auto;
+            right: 3rem;
+        }
         
         &__hum{
             width: 2.5rem;
@@ -152,10 +181,19 @@
            
 
         }
+        &__link img{
+            width: 3rem;
+            height:2.5rem;
+        }
+        
 
     
 }
-
+ .nav-en{
+    @include responed(small-tablet){
+    justify-content: flex-start;
+    }
+ }
 
 
 
@@ -246,6 +284,9 @@
                
            }
     }
+    &__end-en{
+        text-align: center;
+    }
     & h4{
         text-align: center;
        font-size: 2rem;
@@ -264,7 +305,14 @@
    
    }
 
-
+.footer .en-h4{
+    padding-right: 11rem;
+    @include responed(phone){
+        padding-right: 0px;
+          
+             
+         }
+}
 
 
    

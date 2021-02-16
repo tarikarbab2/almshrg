@@ -27,7 +27,7 @@
     html{
     
         
-        font-family: 'El Messiri', sans-serif;
+        
         
         @include responed(big-desktop){
             font-size: 75%;
@@ -56,10 +56,14 @@
     }
     ///header
     body{
+        font-family: 'El Messiri', sans-serif;
         box-sizing: border-box;
         position: relative;
        
         
+    }
+    .en{
+        font-family: 'Newsreader', serif;
     }
     a:link,
     a:visited{
