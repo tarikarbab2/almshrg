@@ -31,7 +31,7 @@
     &__logo h1{
         font-size: 2rem;
         font-weight: 700;
-
+     
     }
     &__logo{
         margin-right: 5rem;
@@ -44,16 +44,20 @@
             margin-right: 0;
             text-align: end;
             height: 100%;
+            display:flex;
+            justify-content: flex-end;
             
         }
     }
     &__logo-en{
         margin-right: 0;
         margin-left: 5rem;
+        
         @include responed(tablet-port){
             order: 0;
             text-align: start;
             padding: 2.5rem;
+            justify-content: flex-start;
         }
     }
     &__items{
